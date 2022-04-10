@@ -37,6 +37,12 @@ public class EnemyController : MonoBehaviour
 
     }
 
+    public void OnDie()
+    {
+        Debug.Log("Hey, I'm dead!");
+        GameController.Instance.OnDie(gameObject, config.score);
+    }
+
 
     private IEnumerator ShootForever()
     {

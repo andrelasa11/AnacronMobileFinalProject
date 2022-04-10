@@ -8,4 +8,5 @@ public class EnemyConfig : ScriptableObject
     public bool isShooter;
     public float shootInitialWaitTime;
     public float shootCadence;
+    public int score;
 }
