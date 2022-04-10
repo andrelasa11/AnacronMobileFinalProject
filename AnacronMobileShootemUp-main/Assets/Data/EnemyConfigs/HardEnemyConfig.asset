@@ -17,3 +17,4 @@ MonoBehaviour:
   isShooter: 1
   shootInitialWaitTime: 0.2
   shootCadence: 0.2
+  score: 8

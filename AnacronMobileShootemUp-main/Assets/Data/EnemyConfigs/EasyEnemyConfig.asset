@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpeed: 1.5
   sprite: {fileID: 21300000, guid: 278b61a9028b9194ba3d4eeadb00f4fb, type: 3}
+  isShooter: 0
+  shootInitialWaitTime: 0
+  shootCadence: 0
+  score: 5
