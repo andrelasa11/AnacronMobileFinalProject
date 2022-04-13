@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
 
-public class OnTriggerDo : MonoBehaviour
+public class OnEnemyTriggerEnterDo : MonoBehaviour
 {
     [SerializeField] private UnityEvent unconditionedActions;
     [SerializeField] private UnityEvent conditionedActions;
@@ -14,7 +14,7 @@ public class OnTriggerDo : MonoBehaviour
 
         foreach (string ignoredTag in tagsToIgnore)
         {
-            if (collision.tag == ignoredTag)
+            if (collision.CompareTag(ignoredTag))
             {
                 return;
             }
