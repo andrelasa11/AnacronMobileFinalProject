@@ -9,12 +9,13 @@ public class PlayerController : MonoBehaviour
     [Header("Configuration")]
     public float speed;
     public float fireRate;
+    public int numberOfCannons;
+    public Transform[] shootOrigins;
 
     [Header("Dependencies")]
     public new Rigidbody2D rigidbody;
-    [SerializeField] List<Shooter> shooters;
+    [SerializeField] private GameObject shootPrefab;
     
-
     //Private
     private Vector2 _movementInput;
     private bool isFiring;
@@ -33,10 +34,42 @@ public class PlayerController : MonoBehaviour
         if (isFiring && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
-            foreach (var shooter in shooters)
+
+            if (numberOfCannons == 1)
             {
-                shooter.DoShoot();
+                Instantiate(shootPrefab, shootOrigins[1].position, shootOrigins[1].rotation);
             }
+
+            if (numberOfCannons == 2)
+            {
+                Instantiate(shootPrefab, shootOrigins[0].position, shootOrigins[0].rotation);
+                Instantiate(shootPrefab, shootOrigins[2].position, shootOrigins[2].rotation);
+            }
+
+            if (numberOfCannons == 3)
+            {
+                Instantiate(shootPrefab, shootOrigins[1].position, shootOrigins[1].rotation);
+                Instantiate(shootPrefab, shootOrigins[3].position, shootOrigins[3].rotation);
+                Instantiate(shootPrefab, shootOrigins[4].position, shootOrigins[4].rotation);
+            }
+
+            if (numberOfCannons == 4)
+            {
+                Instantiate(shootPrefab, shootOrigins[0].position, shootOrigins[0].rotation);
+                Instantiate(shootPrefab, shootOrigins[2].position, shootOrigins[2].rotation);
+                Instantiate(shootPrefab, shootOrigins[3].position, shootOrigins[3].rotation);
+                Instantiate(shootPrefab, shootOrigins[4].position, shootOrigins[4].rotation);
+            }
+
+            if (numberOfCannons >= 5)
+            {
+                Instantiate(shootPrefab, shootOrigins[0].position, shootOrigins[0].rotation);
+                Instantiate(shootPrefab, shootOrigins[1].position, shootOrigins[1].rotation);
+                Instantiate(shootPrefab, shootOrigins[2].position, shootOrigins[2].rotation);
+                Instantiate(shootPrefab, shootOrigins[3].position, shootOrigins[3].rotation);
+                Instantiate(shootPrefab, shootOrigins[4].position, shootOrigins[4].rotation);
+            }
+                       
         }
                 
     }

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - FxTemporaire
   - LevelLimit
+  - PlayerBullet
+  - EnemyBullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - Asteroid
   - Enemy
   - EnemyShoots
-  - 
+  - PlayerShoots
   - 
   - 
   - 

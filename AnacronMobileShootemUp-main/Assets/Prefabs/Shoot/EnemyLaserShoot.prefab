@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4025576804433877638}
   - component: {fileID: 7256892722986246022}
-  m_Layer: 10
-  m_Name: BulletBombSpriteSheetYellow_1
+  m_Layer: 9
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: caa07a017431edc43866c47b6f37a5bf, type: 3}
+  m_Sprite: {fileID: 21300004, guid: d3abe5c405d8ae041a1c151d9ba3c2c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,15 +92,15 @@ GameObject:
   m_Component:
   - component: {fileID: 8274703186677698452}
   - component: {fileID: 667912653242289896}
-  - component: {fileID: 1466712792018438713}
   - component: {fileID: 7801728464285424396}
   - component: {fileID: 4188326834393516479}
   - component: {fileID: 8629139729042855810}
   - component: {fileID: 2927116154306085334}
-  - component: {fileID: 9099842659614431544}
-  m_Layer: 10
-  m_Name: PlayerShoot
-  m_TagString: PlayerBullet
+  - component: {fileID: 3693711136205787763}
+  - component: {fileID: 376934741649266079}
+  m_Layer: 9
+  m_Name: EnemyLaserShoot
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,7 @@ Transform:
   m_GameObject: {fileID: 7862036767440572553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children:
   - {fileID: 4025576804433877638}
   m_Father: {fileID: 0}
@@ -132,24 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f27f51f3d47e4243b8e1488184eba16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   direction: {x: 0, y: 1, z: 0}
---- !u!58 &1466712792018438713
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7862036767440572553}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.00086952746, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.052189842
 --- !u!50 &7801728464285424396
 Rigidbody2D:
   serializedVersion: 4
@@ -240,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 100002, guid: e9391f622091e1449bdef4ef15af4948, type: 3}
---- !u!114 &9099842659614431544
+--- !u!114 &3693711136205787763
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,4 +236,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62da0442298d2d84f9cbb1408a9e6032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 2
+--- !u!70 &376934741649266079
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7862036767440572553}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.18, y: 0.56}
+  m_Direction: 0

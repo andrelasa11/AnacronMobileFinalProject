@@ -6,9 +6,21 @@ public class Shooter : MonoBehaviour
 {
     [SerializeField] private Transform shootOrigin;
     [SerializeField] private GameObject shootPrefab;
+    [SerializeField] private ShootingConfig config;
+    public ShootingConfig ShootingConfig { get { return config; } }
+
+    public bool IsEnabled = true;
 
     public void DoShoot()
     {
-        Instantiate(shootPrefab, shootOrigin.position, shootOrigin.rotation);
+        if (IsEnabled)
+        {
+            Instantiate(shootPrefab, shootOrigin.position, shootOrigin.rotation);
+        }        
+    }
+
+    public void EnableShooter(bool shouldEnable)
+    {
+        IsEnabled = shouldEnable;
     }
 }

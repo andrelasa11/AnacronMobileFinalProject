@@ -6,17 +6,26 @@ public class GameController : MonoBehaviour
 {
     public static GameController Instance;
 
+    [SerializeField] private PlayerController player;
+
+    [HideInInspector] public PlayerController PlayerA { get { return player; } }
+
     //private
-    private int playerScore;
+    private int playerGold;
 
     private void Awake()
     {
         Instance = this;
     }
 
-    public void OnDie(GameObject deadObject, int score = 0)
+    public void OnDie(GameObject deadObject, int gold = 0)
     {
-        playerScore += score;
-        Debug.LogFormat("GameController: {0} has died! Adding score {1}, total: {2}", deadObject.name, score, playerScore);
+        playerGold += gold;
+        Debug.LogFormat("GameController: {0} has died! Adding gold {1}, total: {2}", deadObject.name, gold, playerGold);
+    }
+
+    public void OnPlayerDie()
+    {
+        Debug.Log("***** PLAYER DIED!! *****");
     }
 }
