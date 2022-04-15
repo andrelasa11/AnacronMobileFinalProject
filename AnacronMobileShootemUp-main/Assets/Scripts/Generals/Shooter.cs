@@ -13,7 +13,7 @@ public class Shooter : MonoBehaviour
 
     public void DoShoot()
     {
-        if (IsEnabled)
+        if (IsEnabled && shootOrigin != null)
         {
             Instantiate(shootPrefab, shootOrigin.position, shootOrigin.rotation);
         }        

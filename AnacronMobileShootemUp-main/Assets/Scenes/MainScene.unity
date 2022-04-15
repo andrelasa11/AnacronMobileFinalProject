@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4616466281093918496, guid: 4a2ba760226ceb94eb5e9b1cebbbe509, type: 3}
+      propertyPath: unconditionedActions.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DoTint
+      objectReference: {fileID: 0}
     - target: {fileID: 519299714726056686, guid: 4a2ba760226ceb94eb5e9b1cebbbe509, type: 3}
       propertyPath: m_Name
       value: Right [4]
@@ -141,6 +145,10 @@ PrefabInstance:
     - target: {fileID: 4488697168192407890, guid: 4a2ba760226ceb94eb5e9b1cebbbe509, type: 3}
       propertyPath: healthPoints
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488697168192407895, guid: 4a2ba760226ceb94eb5e9b1cebbbe509, type: 3}
+      propertyPath: fireRate
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4488697168192407895, guid: 4a2ba760226ceb94eb5e9b1cebbbe509, type: 3}
       propertyPath: numberOfCannons
@@ -738,7 +746,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845849953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.097097, y: 7.44, z: 0}
+  m_LocalPosition: {x: -0.097097, y: 11.44, z: 0}
   m_LocalScale: {x: 8.175625, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 462916875}
@@ -976,10 +984,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe29c7b18bc18048ae98b0eec0ec74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialWaitTime: 5
+  initialWaitTime: 1
   cadenceBetweenWaves: 5
   wavesConfig:
-  - {fileID: 11400000, guid: d8e98c8db787d30498e84453631bd8f8, type: 2}
+  - {fileID: 11400000, guid: 52424b1f1c92fd14dbbcdf1083de2490, type: 2}
 --- !u!1 &1448382636
 GameObject:
   m_ObjectHideFlags: 0

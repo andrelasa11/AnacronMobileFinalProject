@@ -26,4 +26,10 @@ public class Tinter : MonoBehaviour
     {
         spriteRenderer.color = originalColor;
     }
+
+    public void TintForever()
+    {
+        Debug.Log("Activating TintForever!");
+        spriteRenderer.color = tintColor;
+    }
 }

@@ -21,6 +21,7 @@ public class HealthController : MonoBehaviour
     {
         if(onZeroHealthPointsActions != null)
         {
+            Debug.LogFormat("Activating!");
             onZeroHealthPointsActions.Invoke();
         }
     }

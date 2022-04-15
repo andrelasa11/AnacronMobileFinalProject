@@ -12,11 +12,6 @@ public class MultipleInstantiator : MonoBehaviour
         StartCoroutine(SequenceInstantiator());
     }
 
-    //public void InstantiateAtTheSameTime()
-    //{
-    //    StartCoroutine(SameTimeInstantiator());
-    //}
-
     private IEnumerator SequenceInstantiator()
     {
         foreach (var instantiator in instantiators)
@@ -26,13 +21,4 @@ public class MultipleInstantiator : MonoBehaviour
         }
     }
 
-    //private void IEnumerator SameTimeInstantiator()
-   // {
-    //    foreach (var instantiator in instantiators)
-     //   {
-     //       instantiator.DoInstantiate();
-     //   }
-//
-      //  return;
-  //  }
 }

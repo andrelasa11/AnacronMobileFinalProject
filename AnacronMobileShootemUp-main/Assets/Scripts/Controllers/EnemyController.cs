@@ -48,6 +48,7 @@ public class EnemyController : MonoBehaviour
 
     public void OnDie()
     {
+        StopAllCoroutines();
         Debug.Log("Hey, I'm dead!");
         GameController.Instance.OnDie(gameObject, config.gold);
     }
