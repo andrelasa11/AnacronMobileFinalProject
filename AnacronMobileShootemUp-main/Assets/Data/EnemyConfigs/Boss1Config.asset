@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Boss1Config
   m_EditorClassIdentifier: 
   enemySpeed: 0
-  healthPoints: 200
-  isShooter: 1
-  shootInitialWaitTime: 5
-  shootCadence: 1
+  healthPoints: 0
   sprite: {fileID: 0}
   gold: 0
+  pickupChance: 0

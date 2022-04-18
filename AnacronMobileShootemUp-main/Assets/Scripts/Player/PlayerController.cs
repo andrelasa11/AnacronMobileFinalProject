@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [Header("Dependencies")]
     public new Rigidbody2D rigidbody;
     [SerializeField] private GameObject shootPrefab;
+    [SerializeField] private SpecialsController specialsController;
     
     //Private
     private Vector2 _movementInput;
@@ -82,6 +83,17 @@ public class PlayerController : MonoBehaviour
     public void OnMovement(InputAction.CallbackContext value)
     {
         _movementInput = value.ReadValue<Vector2>();
+    }
+
+    public void OnPlayerDie()
+    {
+        GameController.Instance.OnPlayerDie();
+    }
+
+    public void UnlockSpecial(PickupConfig pickupConfig)
+    {
+        Debug.LogFormat("UnlockSpecial pickup type {0}", pickupConfig.type);
+        specialsController.UnlockSpecial(pickupConfig);
     }
 
     private void OnEnable()

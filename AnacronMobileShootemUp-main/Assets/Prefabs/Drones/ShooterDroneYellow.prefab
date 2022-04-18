@@ -64,7 +64,8 @@ GameObject:
   - component: {fileID: 1528144523963628885}
   - component: {fileID: -8845575684862418523}
   - component: {fileID: -368655194563295240}
-  - component: {fileID: 2583458397056187331}
+  - component: {fileID: 4790662277692869260}
+  - component: {fileID: 3800935483493270508}
   m_Layer: 8
   m_Name: ShooterDroneYellow
   m_TagString: Enemy
@@ -85,6 +86,7 @@ Transform:
   m_Children:
   - {fileID: 7211241508925321432}
   - {fileID: 204948041811142846}
+  - {fileID: 3952076635383102752}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
@@ -123,7 +125,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unconditionedActions:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3800935483493270508}
+        m_TargetAssemblyTypeName: Tinter, Assembly-CSharp
+        m_MethodName: DoTint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   conditionedActions:
     m_PersistentCalls:
       m_Calls:
@@ -251,6 +265,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2185115226348649463}
+        m_TargetAssemblyTypeName: DestroyObject, Assembly-CSharp
+        m_MethodName: DestroyThis
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-368655194563295240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,25 +290,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
---- !u!95 &2583458397056187331
-Animator:
-  serializedVersion: 3
+--- !u!114 &4790662277692869260
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2822970062923130734}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fd66422843256ee47bdfb2047ad2011b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9d11d204ef4c847a56d5f8191d6e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 3952076635383102752}
+  speed: 3
+--- !u!114 &3800935483493270508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2822970062923130734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3401040becfcebb44a34f3b8e08403ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1108864387568732287}
+  tintColor: {r: 0.37643352, g: 0, b: 0.5188679, a: 1}
+  cadence: 0.1
 --- !u!1 &2884219174888865613
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +481,50 @@ MonoBehaviour:
   shootPrefab: {fileID: 7862036767440572553, guid: ec1bf53dceddeb4409a39cdb9c00ded7, type: 3}
   config: {fileID: 11400000, guid: fe8cf1ba36ceb3543946cf9a0fa4dfc4, type: 2}
   IsEnabled: 1
+--- !u!1 &5867811694993161435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3952076635383102752}
+  - component: {fileID: 2185115226348649463}
+  m_Layer: 8
+  m_Name: TargetMove
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3952076635383102752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5867811694993161435}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4332280547520163551}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2185115226348649463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5867811694993161435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9408fee4899b56648bc2ea3a11f905fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 0
 --- !u!1 &8123945749122951342
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: EasyEnemyConfig
   m_EditorClassIdentifier: 
   enemySpeed: 1.5
-  healthPoints: 4
-  isShooter: 0
-  shootInitialWaitTime: 0
-  shootCadence: 0
+  healthPoints: 2
   sprite: {fileID: 21300000, guid: 278b61a9028b9194ba3d4eeadb00f4fb, type: 3}
   gold: 5
+  pickupChance: 0.664

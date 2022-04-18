@@ -9,5 +9,11 @@ public class EnemyConfig : ScriptableObject
 
     [Header("Others")]
     public Sprite sprite;
-    public int gold;        
+    public int gold;
+    [Range(0, 1)] public float pickupChance;
+
+    public bool ShouldThrowPickup()
+    {
+        return Dice.IsChanceSuccess(pickupChance);
+    }
 }

@@ -17,9 +17,10 @@ GameObject:
   - component: {fileID: 1239325103036478027}
   - component: {fileID: 618093597905414969}
   - component: {fileID: 2218903383531349639}
-  m_Layer: 0
+  - component: {fileID: 1159080240334718378}
+  m_Layer: 8
   m_Name: Asteroid 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,6 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9408fee4899b56648bc2ea3a11f905fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyTime: 0
 --- !u!114 &1239325103036478027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,5 +223,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8939cdee1a0c11c42a013c355cf243f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMin: 1
-  speedMax: 2
+  speedMin: 2
+  speedMax: 6
+--- !u!114 &1159080240334718378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5352959356414813681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd83e453f372594291413a9ff45cee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  config: {fileID: 0}
+  spriteRenderer: {fileID: 0}

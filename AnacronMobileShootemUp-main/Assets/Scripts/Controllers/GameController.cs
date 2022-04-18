@@ -24,6 +24,11 @@ public class GameController : MonoBehaviour
         Debug.LogFormat("GameController: {0} has died! Adding gold {1}, total: {2}", deadObject.name, gold, playerGold);
     }
 
+    public void OnPickupPickedUp(PickupController pickup)
+    {        
+        player.UnlockSpecial(pickup.config);
+    }
+
     public void OnPlayerDie()
     {
         Debug.Log("***** PLAYER DIED!! *****");

@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     //[HideInInspector]
     public EnemyConfig config;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private MultipleInstantiator pickupMultipleInstantiator;
     
     //private
     private Mover mover;
@@ -48,6 +49,24 @@ public class EnemyController : MonoBehaviour
 
     public void OnDie()
     {
+        if (config != null && pickupMultipleInstantiator != null && config.ShouldThrowPickup())
+        {
+            if (pickupMultipleInstantiator.InstantiatorsCount > 1)
+            {
+                for (int i = 0; i < pickupMultipleInstantiator.InstantiatorsCount; i++)
+                {
+                    if(Dice.IsChanceSuccess(config.pickupChance))
+                    {
+                        pickupMultipleInstantiator.InstantiateByIndex(i);
+                    }
+                }
+            }
+            else
+            {
+                pickupMultipleInstantiator.InstantiateInSequence();
+            }
+        }
+
         StopAllCoroutines();
         Debug.Log("Hey, I'm dead!");
         GameController.Instance.OnDie(gameObject, config.gold);

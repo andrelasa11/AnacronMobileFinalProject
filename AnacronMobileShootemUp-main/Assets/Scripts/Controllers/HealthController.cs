@@ -17,6 +17,11 @@ public class HealthController : MonoBehaviour
         }
     }
 
+    public void SetHealth(int value)
+    {
+        healthPoints = value;
+    }
+
     public void OnZeroHealthPoints()
     {
         if(onZeroHealthPointsActions != null)
