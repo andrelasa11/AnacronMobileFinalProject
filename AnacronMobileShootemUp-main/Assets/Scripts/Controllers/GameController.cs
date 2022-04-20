@@ -8,10 +8,26 @@ public class GameController : MonoBehaviour
 
     [SerializeField] private PlayerController player;
 
+    public delegate void GoldChanged(int updatedGold);
+    public event GoldChanged OnGoldChanged;
+
     [HideInInspector] public PlayerController PlayerA { get { return player; } }
 
     //private
-    private int playerGold;
+    private int _playerGold;
+
+    public int PlayerGold
+    {
+        get { return _playerGold; }
+        private set 
+        { 
+            _playerGold = value;
+            if(OnGoldChanged != null)
+            {
+                OnGoldChanged.Invoke(_playerGold);
+            }
+        }
+    }
 
     private void Awake()
     {
@@ -20,8 +36,8 @@ public class GameController : MonoBehaviour
 
     public void OnDie(GameObject deadObject, int gold = 0)
     {
-        playerGold += gold;
-        Debug.LogFormat("GameController: {0} has died! Adding gold {1}, total: {2}", deadObject.name, gold, playerGold);
+        PlayerGold += gold;
+        Debug.LogFormat("GameController: {0} has died! Adding gold {1}, total: {2}", deadObject.name, gold, PlayerGold);
     }
 
     public void OnPickupPickedUp(PickupController pickup)
