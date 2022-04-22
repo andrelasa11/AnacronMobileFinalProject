@@ -5,12 +5,33 @@ using UnityEngine.Events;
 
 public class HealthController : MonoBehaviour
 {
+    
+    public float maxHealth;
     public float healthPoints;
+
+    public HealthBar healthBar;
+    
     [SerializeField] private UnityEvent onZeroHealthPointsActions;
+
+    void Start() 
+    {
+        healthPoints = maxHealth;
+
+        if (healthBar != null)
+        {
+            healthBar.SetMaxHealth(maxHealth);
+        }
+    }
 
     public void ReceiveDamage(float damagePoints)
     {
         healthPoints -= damagePoints;
+        
+        if(healthBar != null)
+        {
+            healthBar.SetHealth(healthPoints);
+        }        
+
         if(healthPoints <=0)
         {
             OnZeroHealthPoints();

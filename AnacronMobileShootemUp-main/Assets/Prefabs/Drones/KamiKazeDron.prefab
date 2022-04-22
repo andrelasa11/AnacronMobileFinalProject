@@ -165,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: d5ceddc010dd9ef4a96b98d50292edea, type: 2}
   spriteRenderer: {fileID: 0}
+  pickupMultipleInstantiator: {fileID: 0}
 --- !u!114 &7383384744510052206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c3328dcc895d6458e4b2500c5e0726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 2
+  maxHealth: 2
+  healthPoints: 0
+  healthBar: {fileID: 0}
   onZeroHealthPointsActions:
     m_PersistentCalls:
       m_Calls:

@@ -21,8 +21,12 @@ public class Boundary : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float x = Mathf.Clamp(playerTransform.position.x, boundaryValue.xMin, boundaryValue.xMax);
-        float y = Mathf.Clamp(playerTransform.position.y, boundaryValue.yMin, boundaryValue.yMax);
-        playerTransform.position = new Vector3(x, y, 0);
+        if(playerTransform != null)
+        {
+            float x = Mathf.Clamp(playerTransform.position.x, boundaryValue.xMin, boundaryValue.xMax);
+            float y = Mathf.Clamp(playerTransform.position.y, boundaryValue.yMin, boundaryValue.yMax);
+            playerTransform.position = new Vector3(x, y, 0);
+        }
+        
     }
 }
