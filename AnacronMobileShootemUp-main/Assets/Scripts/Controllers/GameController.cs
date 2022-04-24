@@ -14,8 +14,9 @@ public class GameController : MonoBehaviour
 
     [HideInInspector] public PlayerController PlayerA { get { return player; } }
 
-    //private
-    private int _playerGold;
+    public GameManagerConfig gmanagerConfig;
+
+    public int _playerGold;
 
     public int PlayerGold
     {
@@ -26,6 +27,7 @@ public class GameController : MonoBehaviour
             if(OnGoldChanged != null)
             {
                 OnGoldChanged.Invoke(_playerGold);
+                gmanagerConfig.gold = _playerGold;
             }
         }
     }
@@ -33,6 +35,7 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        _playerGold = gmanagerConfig.gold;
     }
 
     public void OnDie(GameObject deadObject, int gold = 0)

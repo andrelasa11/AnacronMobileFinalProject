@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public new Rigidbody2D rigidbody;
     [SerializeField] private GameObject shootPrefab;
     [SerializeField] private SpecialsController specialsController;
+    [SerializeField] private GameManagerConfig gmConfig;
     
     //Private
     private Vector2 _movementInput;
@@ -27,7 +28,14 @@ public class PlayerController : MonoBehaviour
     {
         _playerActions = new PlayerActions();
     }
-        
+
+    private void Start()
+    {
+        fireRate = gmConfig.fireRate;
+        numberOfCannons = gmConfig.numberOfCannons;
+        speed = gmConfig.speed;
+    }
+
     private void Update()
     {
         isFiring = _playerActions.PlayerControls.Shoot.ReadValue<float>() > 0;

@@ -62,6 +62,15 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""LoadScene"",
+                    ""type"": ""Button"",
+                    ""id"": ""15421197-5aec-4657-97c5-ebff4848ccb5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -196,6 +205,17 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d39878c7-660d-4ae5-8ef9-e6a3b130643c"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""LoadScene"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -231,6 +251,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         m_PlayerControls_Interacting = m_PlayerControls.FindAction("Interacting", throwIfNotFound: true);
         m_PlayerControls_Shoot = m_PlayerControls.FindAction("Shoot", throwIfNotFound: true);
         m_PlayerControls_Pause = m_PlayerControls.FindAction("Pause", throwIfNotFound: true);
+        m_PlayerControls_LoadScene = m_PlayerControls.FindAction("LoadScene", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -294,6 +315,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerControls_Interacting;
     private readonly InputAction m_PlayerControls_Shoot;
     private readonly InputAction m_PlayerControls_Pause;
+    private readonly InputAction m_PlayerControls_LoadScene;
     public struct PlayerControlsActions
     {
         private @PlayerActions m_Wrapper;
@@ -302,6 +324,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         public InputAction @Interacting => m_Wrapper.m_PlayerControls_Interacting;
         public InputAction @Shoot => m_Wrapper.m_PlayerControls_Shoot;
         public InputAction @Pause => m_Wrapper.m_PlayerControls_Pause;
+        public InputAction @LoadScene => m_Wrapper.m_PlayerControls_LoadScene;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -323,6 +346,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @Pause.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPause;
+                @LoadScene.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnLoadScene;
+                @LoadScene.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnLoadScene;
+                @LoadScene.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnLoadScene;
             }
             m_Wrapper.m_PlayerControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -339,6 +365,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @LoadScene.started += instance.OnLoadScene;
+                @LoadScene.performed += instance.OnLoadScene;
+                @LoadScene.canceled += instance.OnLoadScene;
             }
         }
     }
@@ -367,5 +396,6 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         void OnInteracting(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnLoadScene(InputAction.CallbackContext context);
     }
 }

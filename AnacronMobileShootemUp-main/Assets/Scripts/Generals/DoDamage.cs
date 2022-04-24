@@ -5,6 +5,15 @@ using UnityEngine;
 public class DoDamage : MonoBehaviour
 {
     public float damage;
+    public GameManagerConfig config;
+
+    private void Start()
+    {
+        if(config != null)
+        {
+            damage = config.playerBulletDamage;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,5 +25,13 @@ public class DoDamage : MonoBehaviour
         }
 
 
+    }
+
+    public void IncreaseDamage(float value)
+    {
+        if (value > 0)
+        {
+            damage += value;
+        }
     }
 }

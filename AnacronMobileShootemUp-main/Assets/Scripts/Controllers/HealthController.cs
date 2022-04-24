@@ -10,11 +10,17 @@ public class HealthController : MonoBehaviour
     public float healthPoints;
 
     public HealthBar healthBar;
-    
+
+    [SerializeField] private GameManagerConfig gmConfig;
     [SerializeField] private UnityEvent onZeroHealthPointsActions;
 
     void Start() 
     {
+        if (gmConfig != null)
+        {
+            maxHealth = gmConfig.maxHealth;
+        }
+        
         healthPoints = maxHealth;
 
         if (healthBar != null)

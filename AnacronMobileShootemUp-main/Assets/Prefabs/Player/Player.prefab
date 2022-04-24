@@ -301,6 +301,7 @@ MonoBehaviour:
   maxHealth: 0
   healthPoints: 15
   healthBar: {fileID: 0}
+  gmConfig: {fileID: 0}
   onZeroHealthPointsActions:
     m_PersistentCalls:
       m_Calls:
@@ -693,9 +694,25 @@ MonoBehaviour:
     m_ActionId: 5beec767-7752-446c-9ac6-e1c00df603f5
     m_ActionName: PlayerControls/Shoot[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 267321d2-4e4a-4b97-adaa-49424da8f46b
     m_ActionName: PlayerControls/Pause[/Keyboard/p]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 15421197-5aec-4657-97c5-ebff4848ccb5
+    m_ActionName: PlayerControls/LoadScene[/Keyboard/l]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControls
@@ -725,6 +742,7 @@ MonoBehaviour:
   rigidbody: {fileID: 4488697168192407893}
   shootPrefab: {fileID: 7862036767440572553, guid: 26e3073d2c96ca8459e7c903e92c4724, type: 3}
   specialsController: {fileID: 5539337922694786791}
+  gmConfig: {fileID: 11400000, guid: 4d4a6840ef329084b92422dc0553e949, type: 2}
 --- !u!114 &4488697168192407890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,9 +755,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c3328dcc895d6458e4b2500c5e0726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
-  healthPoints: 30
+  maxHealth: 10
+  healthPoints: 0
   healthBar: {fileID: 2430627995512682936}
+  gmConfig: {fileID: 11400000, guid: 4d4a6840ef329084b92422dc0553e949, type: 2}
   onZeroHealthPointsActions:
     m_PersistentCalls:
       m_Calls:
@@ -834,6 +853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 4
+  config: {fileID: 0}
 --- !u!114 &-4616466281093918496
 MonoBehaviour:
   m_ObjectHideFlags: 0
