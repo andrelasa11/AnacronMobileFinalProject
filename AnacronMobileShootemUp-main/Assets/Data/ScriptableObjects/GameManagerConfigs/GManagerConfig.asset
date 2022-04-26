@@ -16,7 +16,8 @@ MonoBehaviour:
   maxHealth: 10
   numberOfCannons: 1
   speed: 3
-  gold: 50000
+  gold: 110
+  gameLevel: 2
   playerBulletDamage: 1
   shootDamageLevel: 1
   fireRateLevel: 1

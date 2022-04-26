@@ -14,6 +14,7 @@ public class GameManagerConfig : ScriptableObject
 
     [Header("GameController: ")]
     public int gold;
+    public int gameLevel;
 
     [Header("DoDamage: ")]
     public float playerBulletDamage;
@@ -24,6 +25,7 @@ public class GameManagerConfig : ScriptableObject
     public int cannonsLevel = 1;
     public int speedLevel = 1;
     public int maxHealthLevel = 1;
-    private int laserLevel = 1;
+    //private int laserLevel = 1;
+       
 
 }

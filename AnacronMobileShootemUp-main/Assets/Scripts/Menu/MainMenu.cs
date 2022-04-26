@@ -5,15 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private string levelName;
+   
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(levelName);
     }
 
     public void LoadGame()
-    {
-        Debug.Log("Put the load menu and the load system!");
-    }
+    {        
+
+    }       
 
     public void QuitGame()
     {

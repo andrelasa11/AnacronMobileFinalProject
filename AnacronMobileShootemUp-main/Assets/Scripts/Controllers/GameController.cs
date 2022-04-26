@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     public GameManagerConfig gmanagerConfig;
 
     public int _playerGold;
-
+    
     public int PlayerGold
     {
         get { return _playerGold; }
@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        _playerGold = gmanagerConfig.gold;
+        _playerGold = gmanagerConfig.gold;        
     }
 
     public void OnDie(GameObject deadObject, int gold = 0)
@@ -54,4 +54,5 @@ public class GameController : MonoBehaviour
         Debug.Log("***** PLAYER DIED!! *****");
         SceneManager.LoadScene("GameOver");        
     }
+        
 }
