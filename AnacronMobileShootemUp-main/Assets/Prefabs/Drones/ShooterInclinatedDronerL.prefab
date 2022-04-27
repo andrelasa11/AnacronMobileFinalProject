@@ -67,7 +67,7 @@ GameObject:
   - component: {fileID: -368655194563295240}
   - component: {fileID: 7448082580774211020}
   m_Layer: 8
-  m_Name: ShooterDronePurple
+  m_Name: ShooterInclinatedDronerL
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,8 +225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f27f51f3d47e4243b8e1488184eba16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  direction: {x: 0, y: 1, z: 0}
+  speed: 0.7
+  direction: {x: 0.5, y: 1, z: 0}
 --- !u!114 &-8845575684862418523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 1218664614853425798}
   - component: {fileID: 1715180619252374226}
   m_Layer: 8
-  m_Name: idle_drone_purple
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -382,7 +382,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 278b61a9028b9194ba3d4eeadb00f4fb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 441204ce661f32640838942da466ce4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

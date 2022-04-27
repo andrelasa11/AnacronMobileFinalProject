@@ -32,7 +32,7 @@ public class EnemyController : MonoBehaviour
 
         if (healthController != null)
         {
-            healthController.healthPoints = config.healthPoints;
+            healthController.maxHealth = config.healthPoints;
         }
 
         shooters = GetComponentsInChildren<Shooter>();

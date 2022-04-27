@@ -53,7 +53,7 @@ public class SpawnController : MonoBehaviour
     public void SpawnEnemy(EnemyController enemyPrefab, EnemyConfig config, Vector3 enemyPosition, Quaternion rotation)
     {
         var enemyInstance = Instantiate(enemyPrefab, enemyPosition, rotation);
-        enemyInstance.config = config;
+        enemyInstance.config = config;        
     }
         
 }

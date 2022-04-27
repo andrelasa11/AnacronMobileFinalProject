@@ -62,12 +62,12 @@ GameObject:
   - component: {fileID: 5379189244327276631}
   - component: {fileID: 8261292292660906927}
   - component: {fileID: 1528144523963628885}
-  - component: {fileID: 7383384744510052206}
   - component: {fileID: -8845575684862418523}
   - component: {fileID: -368655194563295240}
   - component: {fileID: 7448082580774211020}
+  - component: {fileID: 4986514047168110800}
   m_Layer: 8
-  m_Name: ShooterDronePurple
+  m_Name: EvasiveDrone
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,20 +213,6 @@ MonoBehaviour:
   config: {fileID: 11400000, guid: 49bc5ff86dac2134ca6a61ef7554f26b, type: 2}
   spriteRenderer: {fileID: 1715180619252374226}
   pickupMultipleInstantiator: {fileID: 0}
---- !u!114 &7383384744510052206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2822970062923130734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f27f51f3d47e4243b8e1488184eba16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  direction: {x: 0, y: 1, z: 0}
 --- !u!114 &-8845575684862418523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +297,20 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1715180619252374226}
   tintColor: {r: 0.37643352, g: 0, b: 0.5188679, a: 1}
   cadence: 0.1
+--- !u!114 &4986514047168110800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2822970062923130734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e74eeeaf512140439e0217e48fa5258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.4
+  waitTime: 3
 --- !u!1 &3774552238946086369
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 1218664614853425798}
   - component: {fileID: 1715180619252374226}
   m_Layer: 8
-  m_Name: idle_drone_purple
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -382,7 +382,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 278b61a9028b9194ba3d4eeadb00f4fb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 56333afa39cd62b4298f591910f04bc5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

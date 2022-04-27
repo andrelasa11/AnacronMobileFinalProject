@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 013734c64afe6004584e2f35452212db, type: 3}
-  m_Name: Level1Shooter
+  m_Script: {fileID: 11500000, guid: 29948109d4c692746b9f1a060fc25e0b, type: 3}
+  m_Name: EasyNoShooterConfig
   m_EditorClassIdentifier: 
-  shootInitialWaitTime: 1
-  shootCadence: 1.5
-  damage: 1
+  enemySpeed: 0.8
+  healthPoints: 3
+  sprite: {fileID: 21300000, guid: 278b61a9028b9194ba3d4eeadb00f4fb, type: 3}
+  gold: 2
+  pickupChance: 0.05
