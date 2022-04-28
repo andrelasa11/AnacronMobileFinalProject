@@ -904,6 +904,7 @@ GameObject:
   - component: {fileID: 204792339}
   - component: {fileID: 204792338}
   - component: {fileID: 204792337}
+  - component: {fileID: 204792340}
   m_Layer: 5
   m_Name: LaserButton
   m_TagString: Untagged
@@ -976,7 +977,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 204792338}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1445171298}
+        m_TargetAssemblyTypeName: UpgradeController, Assembly-CSharp
+        m_MethodName: IncreaseMaxLaserPoints
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &204792338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1015,6 +1028,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204792335}
   m_CullTransparentMesh: 1
+--- !u!114 &204792340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204792335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a79652ec564a34bbcb506b21c6f18b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialPrice: 200
+  pointsToIncrease: 2
+  gmConfig: {fileID: 11400000, guid: 4d4a6840ef329084b92422dc0553e949, type: 2}
+  priceText: {fileID: 192683462}
+  valueText: {fileID: 180440733}
+  price: 0
 --- !u!1 &253523726
 GameObject:
   m_ObjectHideFlags: 0
@@ -2341,6 +2372,7 @@ MonoBehaviour:
   cannons: {fileID: 253523731}
   speed: {fileID: 1446815848}
   maxHealth: {fileID: 2082457131}
+  maxLaserPoints: {fileID: 204792340}
   gmConfig: {fileID: 11400000, guid: 4d4a6840ef329084b92422dc0553e949, type: 2}
   goldText: {fileID: 1895707936}
 --- !u!1 &1446815843
@@ -3486,7 +3518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialPrice: 700
-  healthToIncrease: 5
+  healthToIncrease: 3
   gmConfig: {fileID: 11400000, guid: 4d4a6840ef329084b92422dc0553e949, type: 2}
   priceText: {fileID: 1245489679}
   valueText: {fileID: 1937511054}

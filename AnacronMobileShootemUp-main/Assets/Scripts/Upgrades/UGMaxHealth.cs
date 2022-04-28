@@ -22,7 +22,7 @@ public class UGMaxHealth : MonoBehaviour
         if (gmConfig.maxHealthLevel < 5)
         {
             priceText.text = " $ " + price;
-            valueText.text = " " + gmConfig.maxHealthLevel + " > " + (gmConfig.maxHealthLevel + 1);
+            valueText.text = " " + gmConfig.maxHealth + " > " + (gmConfig.maxHealth + healthToIncrease);
         }
         else
         {
@@ -36,7 +36,7 @@ public class UGMaxHealth : MonoBehaviour
         if (gmConfig.maxHealthLevel <= 5)
         {
             gmConfig.maxHealth += healthToIncrease;
-            valueText.text = " " + gmConfig.maxHealthLevel + " > " + (gmConfig.maxHealthLevel + 1);
+            valueText.text = " " + gmConfig.maxHealth + " > " + (gmConfig.maxHealth + healthToIncrease);
 
             price = initialPrice * gmConfig.maxHealthLevel;
             priceText.text = " $ " + price;

@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a011de1bd65253418e7196fdaa94bec, type: 3}
-  m_Name: GManagerConfig
+  m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.5
+  fireRate: 0.6
   maxHealth: 10
   numberOfCannons: 1
   speed: 3
-  gold: 70
+  maxLaserPoints: 5
+  gold: 0
   gameLevel: 1
   playerBulletDamage: 1
   shootDamageLevel: 1
@@ -24,3 +25,4 @@ MonoBehaviour:
   cannonsLevel: 1
   speedLevel: 1
   maxHealthLevel: 1
+  laserLevel: 1

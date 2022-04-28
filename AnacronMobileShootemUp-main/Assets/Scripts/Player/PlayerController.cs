@@ -10,20 +10,23 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float fireRate;
     public int numberOfCannons;
+    public int maxLaserPoints;
     public Transform[] shootOrigins;
 
     [Header("Dependencies")]
     public new Rigidbody2D rigidbody;
     [SerializeField] private GameObject shootPrefab;
+    [SerializeField] private GameObject laserShootPrefab;
     [SerializeField] private SpecialsController specialsController;
     [SerializeField] private GameManagerConfig gmConfig;
     
     //Private
     private Vector2 _movementInput;
-    private bool isFiring;
+    private bool isFiring = true;
     private PlayerActions _playerActions;
-    private float nextFire;
-
+    private int currentLaserPoints;
+    private float nextLaserFire;
+    
     private void Awake()
     {
         _playerActions = new PlayerActions();
@@ -34,53 +37,11 @@ public class PlayerController : MonoBehaviour
         fireRate = gmConfig.fireRate;
         numberOfCannons = gmConfig.numberOfCannons;
         speed = gmConfig.speed;
-    }
+        maxLaserPoints = gmConfig.maxLaserPoints;
 
-    private void Update()
-    {
-        isFiring = _playerActions.PlayerControls.Shoot.ReadValue<float>() > 0;
+        currentLaserPoints = maxLaserPoints;
 
-        if (isFiring && Time.time > nextFire)
-        {
-            nextFire = Time.time + fireRate;
-
-            if (numberOfCannons == 1)
-            {
-                Instantiate(shootPrefab, shootOrigins[1].position, shootOrigins[1].rotation);
-            }
-
-            if (numberOfCannons == 2)
-            {
-                Instantiate(shootPrefab, shootOrigins[0].position, shootOrigins[0].rotation);
-                Instantiate(shootPrefab, shootOrigins[2].position, shootOrigins[2].rotation);
-            }
-
-            if (numberOfCannons == 3)
-            {
-                Instantiate(shootPrefab, shootOrigins[1].position, shootOrigins[1].rotation);
-                Instantiate(shootPrefab, shootOrigins[3].position, shootOrigins[3].rotation);
-                Instantiate(shootPrefab, shootOrigins[4].position, shootOrigins[4].rotation);
-            }
-
-            if (numberOfCannons == 4)
-            {
-                Instantiate(shootPrefab, shootOrigins[0].position, shootOrigins[0].rotation);
-                Instantiate(shootPrefab, shootOrigins[2].position, shootOrigins[2].rotation);
-                Instantiate(shootPrefab, shootOrigins[3].position, shootOrigins[3].rotation);
-                Instantiate(shootPrefab, shootOrigins[4].position, shootOrigins[4].rotation);
-            }
-
-            if (numberOfCannons >= 5)
-            {
-                Instantiate(shootPrefab, shootOrigins[0].position, shootOrigins[0].rotation);
-                Instantiate(shootPrefab, shootOrigins[1].position, shootOrigins[1].rotation);
-                Instantiate(shootPrefab, shootOrigins[2].position, shootOrigins[2].rotation);
-                Instantiate(shootPrefab, shootOrigins[3].position, shootOrigins[3].rotation);
-                Instantiate(shootPrefab, shootOrigins[4].position, shootOrigins[4].rotation);
-            }
-                       
-        }
-                
+        StartCoroutine(ShootForever());
     }
 
     private void FixedUpdate()
@@ -113,4 +74,75 @@ public class PlayerController : MonoBehaviour
     {
         _playerActions.Disable();
     }
+
+    public void LaserShoot()
+    {
+        if(currentLaserPoints > 0 && Time.time > nextLaserFire)
+        {
+            nextLaserFire = Time.time + fireRate;
+            Instantiate(laserShootPrefab, shootOrigins[1].position, shootOrigins[1].rotation);
+            currentLaserPoints--;
+        }
+    }
+
+    public void DisableOrEnableIsFiring()
+    {
+        if(isFiring)
+        {
+            isFiring = false;
+            StopAllCoroutines();
+        }else
+        {
+            isFiring = true;
+            StartCoroutine(ShootForever());
+        }
+    }
+
+    private IEnumerator ShootForever()
+    {
+        while (isFiring)
+        {
+            if (numberOfCannons == 1)
+            {
+                yield return new WaitForSeconds(fireRate);
+                Instantiate(shootPrefab, shootOrigins[1].position, shootOrigins[1].rotation);                
+            }
+
+            if (numberOfCannons == 2)
+            {
+                yield return new WaitForSeconds(fireRate);
+                Instantiate(shootPrefab, shootOrigins[0].position, shootOrigins[0].rotation);
+                Instantiate(shootPrefab, shootOrigins[2].position, shootOrigins[2].rotation);                
+            }
+
+            if (numberOfCannons == 3)
+            {
+                yield return new WaitForSeconds(fireRate);
+                Instantiate(shootPrefab, shootOrigins[1].position, shootOrigins[1].rotation);
+                Instantiate(shootPrefab, shootOrigins[3].position, shootOrigins[3].rotation);
+                Instantiate(shootPrefab, shootOrigins[4].position, shootOrigins[4].rotation);
+            }
+
+            if (numberOfCannons == 4)
+            {
+                yield return new WaitForSeconds(fireRate);
+                Instantiate(shootPrefab, shootOrigins[0].position, shootOrigins[0].rotation);
+                Instantiate(shootPrefab, shootOrigins[2].position, shootOrigins[2].rotation);
+                Instantiate(shootPrefab, shootOrigins[3].position, shootOrigins[3].rotation);
+                Instantiate(shootPrefab, shootOrigins[4].position, shootOrigins[4].rotation);
+            }
+
+            if (numberOfCannons >= 5)
+            {
+                yield return new WaitForSeconds(fireRate);
+                Instantiate(shootPrefab, shootOrigins[0].position, shootOrigins[0].rotation);
+                Instantiate(shootPrefab, shootOrigins[1].position, shootOrigins[1].rotation);
+                Instantiate(shootPrefab, shootOrigins[2].position, shootOrigins[2].rotation);
+                Instantiate(shootPrefab, shootOrigins[3].position, shootOrigins[3].rotation);
+                Instantiate(shootPrefab, shootOrigins[4].position, shootOrigins[4].rotation);
+            }
+        }
+    }
+
+
 }

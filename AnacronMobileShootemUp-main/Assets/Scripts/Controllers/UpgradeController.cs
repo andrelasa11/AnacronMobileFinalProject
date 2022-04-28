@@ -12,6 +12,7 @@ public class UpgradeController : MonoBehaviour
     public UGCannons cannons;
     public UGSpeed speed;
     public UGMaxHealth maxHealth;
+    public UGLaser maxLaserPoints;
 
     [SerializeField] private GameManagerConfig gmConfig;
     [SerializeField] private Text goldText;
@@ -86,6 +87,20 @@ public class UpgradeController : MonoBehaviour
             gmConfig.maxHealthLevel++;
 
             maxHealth.UpGradeMaxHealth();
+
+            goldText.text = " " + gmConfig.gold;
+        }
+    }
+
+    public void IncreaseMaxLaserPoints()
+    {
+        if (gmConfig.gold >= maxLaserPoints.price && gmConfig.laserLevel < 5)
+        {
+            gmConfig.gold -= maxLaserPoints.price;
+
+            gmConfig.laserLevel++;
+
+            maxLaserPoints.UpGradeLaser();
 
             goldText.text = " " + gmConfig.gold;
         }
