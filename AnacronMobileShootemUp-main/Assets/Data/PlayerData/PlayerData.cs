@@ -10,6 +10,7 @@ public class PlayerData
     public float maxHealth;
     public int numberOfCannons;
     public float speed;
+    public int maxLaserPoints;
 
     [Header("GameController: ")]
     public int gold;
@@ -24,7 +25,7 @@ public class PlayerData
     public int cannonsLevel = 1;
     public int speedLevel = 1;
     public int maxHealthLevel = 1;
-    //private int laserLevel = 1;
+    public int laserLevel = 1;
 
     public PlayerData (GameManager gmConfig)
     {
@@ -32,6 +33,7 @@ public class PlayerData
         maxHealth = gmConfig.maxHealth;
         numberOfCannons = gmConfig.numberOfCannons;
         speed = gmConfig.speed;
+        maxLaserPoints = gmConfig.maxLaserPoints;
 
         gold = gmConfig.gold;
         gameLevel = gmConfig.gameLevel;
@@ -43,6 +45,6 @@ public class PlayerData
         cannonsLevel = gmConfig.cannonsLevel;
         speedLevel = gmConfig.speedLevel;
         maxHealthLevel = gmConfig.maxHealthLevel;
-        //laserLevel = gm.Config.laserLevel;
+        laserLevel = gmConfig.laserLevel;
     }
 }

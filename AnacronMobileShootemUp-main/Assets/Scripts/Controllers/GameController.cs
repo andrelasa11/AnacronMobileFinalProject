@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public static GameController Instance;
 
     [SerializeField] private PlayerController player;
+    [SerializeField] private GameManager gameManager;
 
     public delegate void GoldChanged(int updatedGold);
     public event GoldChanged OnGoldChanged;
@@ -52,6 +53,7 @@ public class GameController : MonoBehaviour
     public void OnPlayerDie()
     {
         Debug.Log("***** PLAYER DIED!! *****");
+        gameManager.ResetValue();
         SceneManager.LoadScene("GameOver");        
     }
         

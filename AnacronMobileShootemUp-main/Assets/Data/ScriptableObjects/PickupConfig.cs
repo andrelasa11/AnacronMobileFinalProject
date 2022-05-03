@@ -5,7 +5,9 @@ using UnityEngine;
 public enum PickupType
 {
     None,
-    Shield
+    Shield,
+    Heal,
+    Laser
 }
 
 [CreateAssetMenu(fileName = "New PickupConfig", menuName = "Player/Pickups", order = 1)]

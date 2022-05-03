@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject laserShootPrefab;
     [SerializeField] private SpecialsController specialsController;
     [SerializeField] private GameManagerConfig gmConfig;
+    [SerializeField] private Text currentLaserText;
+
+    //Instance
+    public static PlayerController Instance;
     
     //Private
     private Vector2 _movementInput;
@@ -29,6 +33,7 @@ public class PlayerController : MonoBehaviour
     
     private void Awake()
     {
+        Instance = this;
         _playerActions = new PlayerActions();
     }
 
@@ -40,6 +45,8 @@ public class PlayerController : MonoBehaviour
         maxLaserPoints = gmConfig.maxLaserPoints;
 
         currentLaserPoints = maxLaserPoints;
+
+        currentLaserText.text = currentLaserPoints.ToString();
 
         StartCoroutine(ShootForever());
     }
@@ -77,12 +84,26 @@ public class PlayerController : MonoBehaviour
 
     public void LaserShoot()
     {
-        if(currentLaserPoints > 0 && Time.time > nextLaserFire)
+        if(currentLaserPoints > 0 && Time.time > nextLaserFire && Time.timeScale > 0)
         {
             nextLaserFire = Time.time + fireRate;
             Instantiate(laserShootPrefab, shootOrigins[1].position, shootOrigins[1].rotation);
             currentLaserPoints--;
+            currentLaserText.text = currentLaserPoints.ToString();
         }
+    }
+
+    public void IncreaseLaserPoints(int value)
+    {
+        int provisionalLaserPoints = currentLaserPoints + value;
+
+        if(provisionalLaserPoints > maxLaserPoints)
+        {
+            provisionalLaserPoints = maxLaserPoints;
+        }
+
+        currentLaserPoints = provisionalLaserPoints;
+        currentLaserText.text = currentLaserPoints.ToString();
     }
 
     public void DisableOrEnableIsFiring()
@@ -90,7 +111,7 @@ public class PlayerController : MonoBehaviour
         if(isFiring)
         {
             isFiring = false;
-            StopAllCoroutines();
+            StopCoroutine(ShootForever());
         }else
         {
             isFiring = true;

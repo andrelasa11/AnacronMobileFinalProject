@@ -44,9 +44,27 @@ public class HealthController : MonoBehaviour
         }
     }
 
-    public void SetHealth(int value)
+    public void SetHealth(float value)
     {
         healthPoints = value;
+    }
+
+    public void Healing (float healingPoints)
+    {
+        float provisionalHealth = healthPoints + healingPoints;
+
+        if(provisionalHealth > maxHealth)
+        {
+            provisionalHealth = maxHealth;
+        }
+
+        healthPoints = provisionalHealth;
+
+        if(healthBar != null)
+        {
+            healthBar.SetHealth(healthPoints);
+        }
+
     }
 
     public void OnZeroHealthPoints()

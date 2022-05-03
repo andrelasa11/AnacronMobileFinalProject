@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - enemyPrefab: {fileID: 1528144523963628885, guid: f3b063a8513a68843944fa2fb5b44143, type: 3}
-    spawnReferencePosition: {x: 2.5, y: 5.3, z: 0}
+    spawnReferencePosition: {x: 2.2, y: 5.3, z: 0}
     useSpecificXPosition: 0
     rotation: {x: 0, y: 0, z: 1, w: -0.00000004371139}
     config: {fileID: 11400000, guid: 49bc5ff86dac2134ca6a61ef7554f26b, type: 2}
   - enemyPrefab: {fileID: 1528144523963628885, guid: f3b063a8513a68843944fa2fb5b44143, type: 3}
-    spawnReferencePosition: {x: 2.5, y: 5.3, z: 0}
+    spawnReferencePosition: {x: 2.2, y: 5.3, z: 0}
     useSpecificXPosition: 0
     rotation: {x: 0, y: 0, z: 1, w: -0.00000004371139}
     config: {fileID: 11400000, guid: 49bc5ff86dac2134ca6a61ef7554f26b, type: 2}
   - enemyPrefab: {fileID: 1528144523963628885, guid: fe3ae1a54b8faeb418699c6319b306c4, type: 3}
-    spawnReferencePosition: {x: 2.5, y: 5.3, z: 0}
+    spawnReferencePosition: {x: 2.2, y: 5.3, z: 0}
     useSpecificXPosition: 0
     rotation: {x: 0, y: 0, z: 1, w: -0.00000004371139}
     config: {fileID: 11400000, guid: e7175adefd2e9954e9137ecf56988833, type: 2}

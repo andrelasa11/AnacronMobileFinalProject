@@ -10,6 +10,8 @@ TagManager:
   - EnemyBullet
   - Enemy
   - Pickup
+  - Vortex
+  - Shield
   layers:
   - Default
   - TransparentFX
@@ -23,9 +25,9 @@ TagManager:
   - EnemyShoots
   - PlayerShoots
   - Pickup
-  - 
-  - 
-  - 
+  - Vortex
+  - LevelLimit
+  - Shield
   - 
   - 
   - 

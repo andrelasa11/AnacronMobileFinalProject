@@ -5,8 +5,9 @@ using UnityEngine;
 public class SpecialsController : MonoBehaviour
 {
     [SerializeField] private GameObject shield;
-
-    private Coroutine shieldCoroutine;
+    [SerializeField] private HealthController shieldHealth;
+    [SerializeField] private HealthController playerHealth;
+    [SerializeField] private PlayerController playerController;
 
     public void UnlockSpecial (PickupConfig config)
     {
@@ -15,19 +16,28 @@ public class SpecialsController : MonoBehaviour
         switch(config.type)
         {
             case PickupType.Shield:
-                if(shieldCoroutine != null)
-                {
-                    StopCoroutine(shieldCoroutine);
-                }
+                shieldHealth.healthPoints = shieldHealth.maxHealth;
                 shield.SetActive(true);
-                shieldCoroutine = StartCoroutine(DisableAfterSeconds(shield, config.durationInSeconds));
                 break;
+
+            case PickupType.Heal:
+                if(playerHealth != null)
+                {
+                    playerHealth.Healing(4f);
+                } break;
+
+            case PickupType.Laser:
+                if(playerController != null)
+                {
+                    playerController.IncreaseLaserPoints(1);
+                } break;
+
         }
     }
 
-    private IEnumerator DisableAfterSeconds(GameObject objectToDisable, float time)
+    /*private IEnumerator DisableAfterSeconds(GameObject objectToDisable, float time)
     {
         yield return new WaitForSeconds(time);
         objectToDisable.SetActive(false);
-    }
+    }*/
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +10,7 @@ public class GameManager : MonoBehaviour
     public float maxHealth;
     public int numberOfCannons;
     public float speed;
+    public int maxLaserPoints;
 
     [Header("GameController: ")]
     public int gold;
@@ -26,17 +25,20 @@ public class GameManager : MonoBehaviour
     public int cannonsLevel = 1;
     public int speedLevel = 1;
     public int maxHealthLevel = 1;
-    //private int laserLevel = 1;
+    public int laserLevel = 1;
 
  
     public void SavePlayer()
     {
+        PlayerController.Instance.DisableOrEnableIsFiring();
+
         gmConfig.gameLevel++;
         
         fireRate = gmConfig.fireRate;
         maxHealth = gmConfig.maxHealth;
         numberOfCannons = gmConfig.numberOfCannons;
         speed = gmConfig.speed;
+        maxLaserPoints = gmConfig.maxLaserPoints;
 
         gold = gmConfig.gold;
         gameLevel = gmConfig.gameLevel;
@@ -48,6 +50,30 @@ public class GameManager : MonoBehaviour
         cannonsLevel = gmConfig.cannonsLevel;
         speedLevel = gmConfig.speedLevel;
         maxHealthLevel = gmConfig.maxHealthLevel;
+        laserLevel = gmConfig.laserLevel;
+
+        SaveSystem.SavePlayer(this);
+    }
+
+    public void SavePlayerOnUpgradeMenu()
+    {
+        fireRate = gmConfig.fireRate;
+        maxHealth = gmConfig.maxHealth;
+        numberOfCannons = gmConfig.numberOfCannons;
+        speed = gmConfig.speed;
+        maxLaserPoints = gmConfig.maxLaserPoints;
+
+        gold = gmConfig.gold;
+        gameLevel = gmConfig.gameLevel;
+
+        playerBulletDamage = gmConfig.playerBulletDamage;
+
+        shootDamageLevel = gmConfig.shootDamageLevel;
+        fireRateLevel = gmConfig.fireRateLevel;
+        cannonsLevel = gmConfig.cannonsLevel;
+        speedLevel = gmConfig.speedLevel;
+        maxHealthLevel = gmConfig.maxHealthLevel;
+        laserLevel = gmConfig.laserLevel;
 
         SaveSystem.SavePlayer(this);
     }
@@ -60,6 +86,7 @@ public class GameManager : MonoBehaviour
         maxHealth = data.maxHealth;
         numberOfCannons = data.numberOfCannons;
         speed = data.speed;
+        maxLaserPoints = data.maxLaserPoints;
 
         gold = data.gold;
         gameLevel = data.gameLevel;
@@ -71,12 +98,13 @@ public class GameManager : MonoBehaviour
         cannonsLevel = data.cannonsLevel;
         speedLevel = data.speedLevel;
         maxHealthLevel = data.maxHealthLevel;
-        //laserLevel = data.laserLevel;
+        laserLevel = data.laserLevel;
 
         gmConfig.fireRate = data.fireRate;
         gmConfig.maxHealth = data.maxHealth;
         gmConfig.numberOfCannons = data.numberOfCannons;
         gmConfig.speed = data.speed;
+        gmConfig.maxLaserPoints = data.maxLaserPoints;
 
         gmConfig.gold = data.gold;
         gmConfig.gameLevel = data.gameLevel;
@@ -88,8 +116,30 @@ public class GameManager : MonoBehaviour
         gmConfig.cannonsLevel = data.cannonsLevel;
         gmConfig.speedLevel = data.speedLevel;
         gmConfig.maxHealthLevel = data.maxHealthLevel;
+        gmConfig.laserLevel = data.laserLevel;
 
         SceneManager.LoadScene(gameLevel);
 
+    }
+
+    public void ResetValue()
+    {
+        gmConfig.fireRate = 0.6f;
+        gmConfig.maxHealth = 10;
+        gmConfig.numberOfCannons = 1;
+        gmConfig.speed = 3;
+        gmConfig.maxLaserPoints = 5;
+
+        gmConfig.gold = 0;
+        gmConfig.gameLevel = 1;
+
+        gmConfig.playerBulletDamage = 1;
+
+        gmConfig.shootDamageLevel = 1;
+        gmConfig.fireRateLevel = 1;
+        gmConfig.cannonsLevel = 1;
+        gmConfig.speedLevel = 1;
+        gmConfig.maxHealthLevel = 1;
+        gmConfig.laserLevel = 1;
     }
 }

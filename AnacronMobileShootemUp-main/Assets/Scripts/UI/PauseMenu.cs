@@ -9,6 +9,9 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    public GameObject stickUI;
+
+
     public void DoPauseOrResume()
     {
         if (GameIsPaused)
@@ -23,14 +26,23 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);        
+        if(pauseMenuUI != null && stickUI != null)
+        {
+            pauseMenuUI.SetActive(false);
+            stickUI.SetActive(true);
+        }        
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
 
     public void Pause()
     {
-        pauseMenuUI.SetActive(true);
+        if (pauseMenuUI != null && stickUI != null)
+        {
+            pauseMenuUI.SetActive(true);
+            stickUI.SetActive(false);
+        }
+       
         Time.timeScale = 0f;
         GameIsPaused = true;
     }

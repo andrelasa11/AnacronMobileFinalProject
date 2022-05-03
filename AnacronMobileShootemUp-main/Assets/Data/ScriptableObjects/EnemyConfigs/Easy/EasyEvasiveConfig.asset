@@ -16,4 +16,4 @@ MonoBehaviour:
   healthPoints: 2
   sprite: {fileID: 0}
   gold: 3
-  pickupChance: 0.05
+  pickupChance: 0.1

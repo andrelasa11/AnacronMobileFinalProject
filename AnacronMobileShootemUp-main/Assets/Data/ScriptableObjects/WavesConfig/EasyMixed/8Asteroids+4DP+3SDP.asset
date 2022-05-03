@@ -14,57 +14,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - enemyPrefab: {fileID: 1159080240334718378, guid: b3b9bfb906c015d4d98f37054a466085, type: 3}
-    spawnReferencePosition: {x: 2.7, y: 5.3, z: 0}
+    spawnReferencePosition: {x: 2.2, y: 5.3, z: 0}
     useSpecificXPosition: 0
     rotation: {x: 0, y: 0, z: 0, w: 0}
     config: {fileID: 11400000, guid: 503a1fee9b823a14e82603a2ee885753, type: 2}
   - enemyPrefab: {fileID: 1159080240334718378, guid: b3b9bfb906c015d4d98f37054a466085, type: 3}
-    spawnReferencePosition: {x: 2.7, y: 5.3, z: 0}
+    spawnReferencePosition: {x: 2.2, y: 5.3, z: 0}
     useSpecificXPosition: 0
     rotation: {x: 0, y: 0, z: 0, w: 0}
     config: {fileID: 11400000, guid: 503a1fee9b823a14e82603a2ee885753, type: 2}
   - enemyPrefab: {fileID: 1159080240334718378, guid: b3b9bfb906c015d4d98f37054a466085, type: 3}
-    spawnReferencePosition: {x: 2.7, y: 5.3, z: 0}
+    spawnReferencePosition: {x: 2.2, y: 5.3, z: 0}
     useSpecificXPosition: 0
     rotation: {x: 0, y: 0, z: 0, w: 0}
     config: {fileID: 11400000, guid: 503a1fee9b823a14e82603a2ee885753, type: 2}
   - enemyPrefab: {fileID: 1528144523963628885, guid: fe3ae1a54b8faeb418699c6319b306c4, type: 3}
-    spawnReferencePosition: {x: 2.7, y: 5.3, z: 0}
+    spawnReferencePosition: {x: 2.2, y: 5.3, z: 0}
     useSpecificXPosition: 0
     rotation: {x: 0, y: 0, z: 0, w: 0}
     config: {fileID: 11400000, guid: 105eb58a87ac8894e91e4277ce5b1871, type: 2}
   - enemyPrefab: {fileID: 1528144523963628885, guid: fe3ae1a54b8faeb418699c6319b306c4, type: 3}
-    spawnReferencePosition: {x: 2.7, y: 5.3, z: 0}
+    spawnReferencePosition: {x: 2.2, y: 5.3, z: 0}
     useSpecificXPosition: 0
     rotation: {x: 0, y: 0, z: 0, w: 0}
     config: {fileID: 11400000, guid: 105eb58a87ac8894e91e4277ce5b1871, type: 2}
   - enemyPrefab: {fileID: 1528144523963628885, guid: fe3ae1a54b8faeb418699c6319b306c4, type: 3}
-    spawnReferencePosition: {x: 2.7, y: 5.3, z: 0}
+    spawnReferencePosition: {x: 2.2, y: 5.3, z: 0}
     useSpecificXPosition: 0
     rotation: {x: 0, y: 0, z: 0, w: 0}
     config: {fileID: 11400000, guid: 105eb58a87ac8894e91e4277ce5b1871, type: 2}
   - enemyPrefab: {fileID: 1528144523963628885, guid: fe3ae1a54b8faeb418699c6319b306c4, type: 3}
-    spawnReferencePosition: {x: 2.7, y: 5.3, z: 0}
+    spawnReferencePosition: {x: 2.2, y: 5.3, z: 0}
     useSpecificXPosition: 0
     rotation: {x: 0, y: 0, z: 0, w: 0}
     config: {fileID: 11400000, guid: 105eb58a87ac8894e91e4277ce5b1871, type: 2}
   - enemyPrefab: {fileID: 1528144523963628885, guid: f3b063a8513a68843944fa2fb5b44143, type: 3}
-    spawnReferencePosition: {x: 2.7, y: 5.3, z: 0}
+    spawnReferencePosition: {x: 2.2, y: 5.3, z: 0}
     useSpecificXPosition: 0
     rotation: {x: 0, y: 0, z: 0, w: 0}
     config: {fileID: 11400000, guid: 49bc5ff86dac2134ca6a61ef7554f26b, type: 2}
   - enemyPrefab: {fileID: 1528144523963628885, guid: f3b063a8513a68843944fa2fb5b44143, type: 3}
-    spawnReferencePosition: {x: 2.7, y: 5.3, z: 0}
+    spawnReferencePosition: {x: 2.2, y: 5.3, z: 0}
     useSpecificXPosition: 0
     rotation: {x: 0, y: 0, z: 0, w: 0}
     config: {fileID: 11400000, guid: 49bc5ff86dac2134ca6a61ef7554f26b, type: 2}
   - enemyPrefab: {fileID: 1528144523963628885, guid: f3b063a8513a68843944fa2fb5b44143, type: 3}
-    spawnReferencePosition: {x: 2.7, y: 5.3, z: 0}
+    spawnReferencePosition: {x: 2.2, y: 5.3, z: 0}
     useSpecificXPosition: 0
     rotation: {x: 0, y: 0, z: 0, w: 0}
     config: {fileID: 11400000, guid: 49bc5ff86dac2134ca6a61ef7554f26b, type: 2}
   - enemyPrefab: {fileID: 1159080240334718378, guid: b3b9bfb906c015d4d98f37054a466085, type: 3}
-    spawnReferencePosition: {x: 2.7, y: 5.3, z: 0}
+    spawnReferencePosition: {x: 2.2, y: 5.3, z: 0}
     useSpecificXPosition: 0
     rotation: {x: 0, y: 0, z: 0, w: 0}
     config: {fileID: 11400000, guid: 503a1fee9b823a14e82603a2ee885753, type: 2}

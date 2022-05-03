@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c43eccf49d2a73469eab65c3e9d7a75, type: 3}
-  m_Name: V11DronesPurple
+  m_Name: V9DronesPurple
   m_EditorClassIdentifier: 
   enemies:
   - enemyPrefab: {fileID: 1528144523963628885, guid: fe3ae1a54b8faeb418699c6319b306c4, type: 3}
@@ -55,16 +55,6 @@ MonoBehaviour:
     config: {fileID: 11400000, guid: 105eb58a87ac8894e91e4277ce5b1871, type: 2}
   - enemyPrefab: {fileID: 1528144523963628885, guid: fe3ae1a54b8faeb418699c6319b306c4, type: 3}
     spawnReferencePosition: {x: -2, y: 7.5, z: 0}
-    useSpecificXPosition: 1
-    rotation: {x: 0, y: 0, z: 1, w: -0.00000004371139}
-    config: {fileID: 11400000, guid: 105eb58a87ac8894e91e4277ce5b1871, type: 2}
-  - enemyPrefab: {fileID: 1528144523963628885, guid: fe3ae1a54b8faeb418699c6319b306c4, type: 3}
-    spawnReferencePosition: {x: 2.5, y: 8, z: 0}
-    useSpecificXPosition: 1
-    rotation: {x: 0, y: 0, z: 1, w: -0.00000004371139}
-    config: {fileID: 11400000, guid: 105eb58a87ac8894e91e4277ce5b1871, type: 2}
-  - enemyPrefab: {fileID: 1528144523963628885, guid: fe3ae1a54b8faeb418699c6319b306c4, type: 3}
-    spawnReferencePosition: {x: -2.5, y: 8, z: 0}
     useSpecificXPosition: 1
     rotation: {x: 0, y: 0, z: 1, w: -0.00000004371139}
     config: {fileID: 11400000, guid: 105eb58a87ac8894e91e4277ce5b1871, type: 2}

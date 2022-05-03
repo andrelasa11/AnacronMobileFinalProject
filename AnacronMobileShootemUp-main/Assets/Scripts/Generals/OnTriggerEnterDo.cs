@@ -10,6 +10,11 @@ public class OnTriggerEnterDo : MonoBehaviour
         
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.CompareTag("Pickup") || collision.CompareTag("Vortex"))
+        {
+            return;
+        }
+
         unconditionedActions.Invoke(); // invocando as ações incondicionadas, pois elas não são filtradas
 
         foreach (string ignoredTag in tagsToIgnore)
